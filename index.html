@@ -1,38 +1,73 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" ng-app="tictactoeApp">
 
 <head>
-  <title>CQD Semi</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300
-    rel=" stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons
-    rel=" stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300
-    rel=" stylesheet" type="text/css">
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title> Tic Tac Toe</title>
+
+  <!--  Styles  -->
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link href="https://bootswatch.com/3/cyborg/bootstrap.min.css" rel="stylesheet">
+  <link href="static/style.css" type="text/css" rel="stylesheet">
 </head>
 
-<body>
-  <div class='flex'>
-    <div class='p1'>Player 1: 0</div>
-    <h1 class='header'>Tic Tac Toe</h1>
-    <div class='p2'>Player 2: 0</div>
+<body ng-controller="GameCtrl">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Tic Tac Toe</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" ng-click="restartGame()">New Game</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Board -->
+  <div class="container">
+    <input type="text" id="gameStatus" ng-model="gameStatus" ng-show="false">
+    <div class="row">
+      <div class="board">
+        <div class="tile">
+          <button id="0" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="1" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="2" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="3" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="4" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="5" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="6" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="7" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="8" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class='grid'>
-    <div class='space' id='one'></div>
-    <div class='space' id='two'></div>
-    <div class='space' id='three'></div>
-    <div class='space' id='four'></div>
-    <div class='space' id='five'></div>
-    <div class='space' id='six'></div>
-    <div class='space' id='seven'></div>
-    <div class='space' id='eight'></div>
-    <div class='space' id='nine'></div>
-  </div> 
-  
-  <div class='wrapper'>
-    <button class='reset'>Reset</button>
-  </div>  
+  <!--  Scripts  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/9c81709da6.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+  <script src="scripts/ai.js"></script>
+  <script src="scripts/game.js"></script>
+  <script src="scripts/ui.js"></script>
 </body>
 
 </html>
+    
