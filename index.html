@@ -1,47 +1,73 @@
-<html></html>
+<!DOCTYPE html>
+<html lang="en" ng-app="tictactoeApp">
 
-.tic-tac-toe
-  - for (var turn = 1; turn <= 9; turn++)
-    - for (var row = 1; row <= 3; row++)
-      - for (var column = 1; column <= 3; column++)
-        - var player = "1"
-        - var positionHorizontal = ""
-        - var positionVertical = ""
-        - var positionDiagonal = ""
-        
-        if( turn % 2 == 0 )
-          - var player = "2"
-          
-        if( column == 1 )
-          - var positionHorizontal = " left first-column"
-        else if( column == 2 )
-          - var positionHorizontal = " middle second-column"
-        else if( column == 3 )
-          - var positionHorizontal = " right third-column"
-         
-        if( row == 1 )
-          - var positionVertical = " top first-row"
-        else if( row == 2 )
-          - var positionVertical = " center second-row"
-        else if( row == 3 )
-          - var positionVertical = " bottom third-row"
-        
-        if( row == 1 && column == 1 )
-          - var positionDiagonal = " first-diagonal"
-        else if( row == 1 && column == 3 )
-          - var positionDiagonal = " second-diagonal"
-        else if( row == 2 && column == 2 )
-          - var positionDiagonal = " first-diagonal second-diagonal"
-        else if( row == 3 && column == 1 )
-          - var positionDiagonal = " second-diagonal"
-        else if( row == 3 && column == 3 )
-          - var positionDiagonal = " first-diagonal"
-        
-        input(id="block" + turn + "-" + row + "-" + column type="radio" class="player-" + player + positionHorizontal + positionVertical + positionDiagonal + " turn-" + turn)
-        label(for="block" + turn + "-" + row + "-" + column class="turn-" + turn)
+<head>
 
-  .end
-    h3
-    a(href="") Restart
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title> Tic Tac Toe</title>
+
+  <!--  Styles  -->
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link href="https://bootswatch.com/3/cyborg/bootstrap.min.css" rel="stylesheet">
+  <link href="C:\Users\PRATEEK ANAND\OneDrive - Manipal Academy of Higher Education\Desktop\TIC TAC TOE\style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body ng-controller="GameCtrl">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Tic Tac Toe</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" ng-click="restartGame()">New Game</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Board -->
+  <div class="container">
+    <input type="text" id="gameStatus" ng-model="gameStatus" ng-show="false">
+    <div class="row">
+      <div class="board">
+        <div class="tile">
+          <button id="0" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="1" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="2" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="3" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="4" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="5" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="6" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="7" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+        <div class="tile">
+          <button id="8" type="button" class="btn btn-primary tile-button"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  Scripts  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/9c81709da6.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+  <script src="scripts/ai.js"></script>
+  <script src="scripts/game.js"></script>
+  <script src="scripts/ui.js"></script>
+</body>
+
+</html>
     
-h5 Note: use the Full Page view for the best experience.
