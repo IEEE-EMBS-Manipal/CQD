@@ -2,19 +2,15 @@ body {
     font: 1.4em 'Press Start 2P', cursive !important;
   }
   
-  h4 {
-    font-family: 'Press Start 2P', cursive !important;
-  }
-  
-  h5 {
+  h4 h5 {
     font-family: 'Press Start 2P', cursive !important;
   }
   
   .board {
     width: 800px;
-    margin-top: 0px;
+    margin-top: 25px;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: 25%;
   }
   
   .tile {
