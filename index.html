@@ -1,47 +1,38 @@
-<html></html>
+<html>
 
-.tic-tac-toe
-  - for (var turn = 1; turn <= 9; turn++)
-    - for (var row = 1; row <= 3; row++)
-      - for (var column = 1; column <= 3; column++)
-        - var player = "1"
-        - var positionHorizontal = ""
-        - var positionVertical = ""
-        - var positionDiagonal = ""
-        
-        if( turn % 2 == 0 )
-          - var player = "2"
-          
-        if( column == 1 )
-          - var positionHorizontal = " left first-column"
-        else if( column == 2 )
-          - var positionHorizontal = " middle second-column"
-        else if( column == 3 )
-          - var positionHorizontal = " right third-column"
-         
-        if( row == 1 )
-          - var positionVertical = " top first-row"
-        else if( row == 2 )
-          - var positionVertical = " center second-row"
-        else if( row == 3 )
-          - var positionVertical = " bottom third-row"
-        
-        if( row == 1 && column == 1 )
-          - var positionDiagonal = " first-diagonal"
-        else if( row == 1 && column == 3 )
-          - var positionDiagonal = " second-diagonal"
-        else if( row == 2 && column == 2 )
-          - var positionDiagonal = " first-diagonal second-diagonal"
-        else if( row == 3 && column == 1 )
-          - var positionDiagonal = " second-diagonal"
-        else if( row == 3 && column == 3 )
-          - var positionDiagonal = " first-diagonal"
-        
-        input(id="block" + turn + "-" + row + "-" + column type="radio" class="player-" + player + positionHorizontal + positionVertical + positionDiagonal + " turn-" + turn)
-        label(for="block" + turn + "-" + row + "-" + column class="turn-" + turn)
+<head>
+  <title>CQD Semi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300
+    rel=" stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons
+    rel=" stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300
+    rel=" stylesheet" type="text/css">
+</head>
 
-  .end
-    h3
-    a(href="") Restart
-    
-h5 Note: use the Full Page view for the best experience.
+<body>
+  <div class='flex'>
+    <div class='p1'>Player 1: 0</div>
+    <h1 class='header'>Tic Tac Toe</h1>
+    <div class='p2'>Player 2: 0</div>
+  </div>
+  <div class='grid'>
+    <div class='space' id='one'></div>
+    <div class='space' id='two'></div>
+    <div class='space' id='three'></div>
+    <div class='space' id='four'></div>
+    <div class='space' id='five'></div>
+    <div class='space' id='six'></div>
+    <div class='space' id='seven'></div>
+    <div class='space' id='eight'></div>
+    <div class='space' id='nine'></div>
+  </div> 
+  
+  <div class='wrapper'>
+    <button class='reset'>Reset</button>
+  </div>  
+</body>
+
+</html>
