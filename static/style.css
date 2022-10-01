@@ -2,19 +2,15 @@ body {
     font: 1.4em 'Press Start 2P', cursive !important;
   }
   
-  h4 {
-    font-family: 'Press Start 2P', cursive !important;
-  }
-  
-  h5 {
+  h4 h5 {
     font-family: 'Press Start 2P', cursive !important;
   }
   
   .board {
-    width: 400px;
-    margin-top: 60px;
+    width: 800px;
+    margin-top: 25px;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: 25%;
   }
   
   .tile {
@@ -23,16 +19,12 @@ body {
   }
   
   .tile-button {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     padding: 0;
     cursor: pointer;
     vertical-align: middle;
     border : 1px solid gray;
     border-radius: 5px;
-  }
-  
-  .finish {
-    text-align: center;
   }
   
