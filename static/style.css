@@ -11,7 +11,7 @@ body {
   }
   
   .board {
-    width: 400px;
+    width: 800px;
     margin-top: 60px;
     margin-right: auto;
     margin-left: auto;
@@ -23,8 +23,8 @@ body {
   }
   
   .tile-button {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     padding: 0;
     cursor: pointer;
     vertical-align: middle;
