@@ -1,2 +1,1 @@
-# CQD Semi final round
-Tic Tac Toe
+# COVID QUIZ-INTINE & DEBATE
