@@ -1,31 +1,30 @@
 body {
-    font: 1.4em 'Press Start 2P', cursive !important;
-  }
-  
-  h4 h5 {
-    font-family: 'Press Start 2P', cursive !important;
-  }
-  
-  .board {
-    width: 800px;
-    margin-top: 25px;
-    margin-right: auto;
-    margin-left: 25%;
-  }
-  
-  .tile {
-    float: left;
-    padding: 3px;
-  }
-  
-  .tile-button {
-    width: 200px;
-    height: 200px;
-    padding: 0;
-    cursor: pointer;
-    vertical-align: middle;
-    border : 1px solid gray;
-    border-radius: 5px;
-    background-color: gray;
-  }
- 
+  font: 1.4em 'Press Start 2P', cursive !important;
+}
+
+h4 h5 {
+  font-family: 'Press Start 2P', cursive !important;
+}
+
+.board {
+  width: 800px;
+  margin-top: 25px;
+  margin-right: auto;
+  margin-left: 25%;
+}
+
+.tile {
+  float: left;
+  padding: 3px;
+}
+
+.tile-button {
+  width: 200px;
+  height: 200px;
+  padding: 0;
+  cursor: pointer;
+  vertical-align: middle;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: gray;
+}
