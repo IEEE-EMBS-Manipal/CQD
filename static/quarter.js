@@ -37,9 +37,6 @@ function updateBox(box, value) {
 function initUpdate() {
     const board = document.getElementsByClassName("board")[0];
 
-    // let content = JSON.parse(quarterContent);
-    // console.log(content);
-
     for (const tile of board.children) {
         let box = tile.children[0];
 
@@ -49,6 +46,9 @@ function initUpdate() {
         box.style.backgroundColor = 'gray';
         box.dataset.count = 0;
     };
+
+    let content = JSON.parse();
+    console.log(content);
 }
 
 window.onload = function () {
