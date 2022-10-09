@@ -29,8 +29,13 @@ function setColor(e) {
     target.dataset.count = ++count;
 }
 
-function updateBox(box, value) {
-    box.innerText = value;
+function updateBox(box, value, color) {
+    if (value !== null) {
+        box.innerText = value;
+    }
+    if (color !== null) {
+        box.style.backgroundColor = color;
+    }
 }
 
 function initUpdate() {
@@ -40,14 +45,11 @@ function initUpdate() {
     for (const tile of board.children) {
         let box = tile.children[0];
 
-        // Dispaly box content
+        // Dispaly box content and default colors
         try {
             let value = content[box.id].value;
-            box.value = updateBox(box, value);
+            updateBox(box, value, 'gray');
         } catch (error) { }
-
-        // Load default color
-        box.style.backgroundColor = 'gray';
         box.dataset.count = 0;
     };
 }
@@ -180,7 +182,7 @@ function loadContent() {
             "value": "A.25"
         },
         "40": {
-            "value": "A.25"
+            "value": "100"
         },
         "41": {
             "value": "A.25"
