@@ -31,26 +31,38 @@ function setColor(e) {
 }
 
 function updateBox(box, value) {
-    box.value = value;
+    box.innerText = value;
 }
 
 function initUpdate() {
     const board = document.getElementsByClassName("board")[0];
+    let content = loadContent()
 
     for (const tile of board.children) {
         let box = tile.children[0];
 
-        // let value = content[box.id];
-        // box.value = updateBox(box, value);
+        try {
+            let value = content[box.id].value;
+            box.value = updateBox(box, value);
+        } catch (error) { }
 
         box.style.backgroundColor = 'gray';
         box.dataset.count = 0;
     };
-
-    let content = JSON.parse();
-    console.log(content);
 }
 
 window.onload = function () {
     initUpdate();
 };
+
+function loadContent() {
+    var content = {
+        "0": {
+            "value": "A.25"
+        },
+        "1": {
+            "value": "B.55"
+        }
+    }
+    return content;
+}
