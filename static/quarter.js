@@ -1,7 +1,49 @@
 function setColor(e) {
-    var target = e.target,
-        count = +target.dataset.count;
+    let target = e.target;
+    let count = +target.dataset.count;
 
-    target.style.backgroundColor = count === 1 ? "#ff0000" : '#8a2be2';
-    target.dataset.count = count === 1 ? 0 : 1;
+    switch (count) {
+        case 0:
+            color = 'white';
+            break;
+
+        case 1:
+            color = 'red';
+            break;
+
+        case 2:
+            color = 'blue';
+            break;
+
+        case 3:
+            color = 'green';
+            break;
+
+        default:
+            color = 'gray';
+            count = 0
+            break;
+    }
+
+    target.style.backgroundColor = color;
+    target.dataset.count = count++;
+}
+
+function updateBox(box, value) {
+    box.value = value;
+}
+
+function initUpdate() {
+    let board = document.querySelector("board");
+    let content = JSON.parse("quarter.json");
+
+    for (const tile of board.childNodes) {
+        let box = tile.firstChild;
+        // let value = content[box.id];
+
+        // box.value = updateBox(box, value);
+        
+        box.style.backgroundColor = 'white';
+        box.dataset.count = 0;
+    };
 }
