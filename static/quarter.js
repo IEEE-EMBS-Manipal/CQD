@@ -1,6 +1,7 @@
 function setColor(e) {
     let target = e.target;
     let count = +target.dataset.count;
+    console.log(count);
 
     switch (count) {
         case 0:
@@ -21,12 +22,12 @@ function setColor(e) {
 
         default:
             color = 'gray';
-            count = 0
+            count = -1;
             break;
     }
 
     target.style.backgroundColor = color;
-    target.dataset.count = count++;
+    target.dataset.count = ++count;
 }
 
 function updateBox(box, value) {
@@ -34,16 +35,22 @@ function updateBox(box, value) {
 }
 
 function initUpdate() {
-    let board = document.querySelector("board");
-    let content = JSON.parse("quarter.json");
+    const board = document.getElementsByClassName("board")[0];
 
-    for (const tile of board.childNodes) {
-        let box = tile.firstChild;
+    // let content = JSON.parse(quarterContent);
+    // console.log(content);
+
+    for (const tile of board.children) {
+        let box = tile.children[0];
+
         // let value = content[box.id];
-
         // box.value = updateBox(box, value);
-        
-        box.style.backgroundColor = 'white';
+
+        box.style.backgroundColor = 'gray';
         box.dataset.count = 0;
     };
 }
+
+window.onload = function () {
+    initUpdate();
+};
