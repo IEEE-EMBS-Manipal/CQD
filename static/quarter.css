@@ -7,20 +7,20 @@ h4 h5 {
 }
 
 .board {
-  width: 800px;
+  width: 558px;
   margin-top: 0px;
   margin-right: auto;
-  margin-left: 16.5%;
+  margin-left: 5%;
 }
 
 .tile {
   float: left;
-  padding: 3px;
+  padding: 2px;
 }
 
 .tile-button {
-  width: 62px;
-  height: 62px;
+  width: 58px;
+  height: 58px;
   padding: 0;
   cursor: pointer;
   vertical-align: middle;
