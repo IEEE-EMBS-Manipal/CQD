@@ -4,23 +4,26 @@ function setColor(e) {
 
     switch (count) {
         case 0:
-            color = 'purple';
+            color = '#292F36';
             break;
 
         case 1:
-            color = 'red';
+            color = '#70e000';
             break;
 
         case 2:
-            color = 'blue';
+            color = '#B2BECC';
             break;
 
         case 3:
-            color = 'green';
+            color = '#F08080';
             break;
-
+        case 4:
+             color = '#F6BD60';
+             break;
+        
         default:
-            color = 'gray';
+            color = '#457B9D';
             count = -1;
             break;
     }
@@ -48,7 +51,7 @@ function initUpdate() {
         // Dispaly box content and default colors
         try {
             let value = content[box.id].value;
-            updateBox(box, value, 'gray');
+            updateBox(box, value, '#457B9D');
 
             if (box.id == '40') {
                 updateBox(box, null, 'gold');
@@ -311,3 +314,4 @@ function loadContent() {
     }
     return content;
 }
+
