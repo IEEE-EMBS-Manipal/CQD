@@ -1,4 +1,4 @@
-let colors = ['#292F36', '#70e000', '#B2BECC', '#F08080', '#F6BD60', '#457B9D'];
+let colors = ["red", "blue", "green", "orange", "skyblue"];
 
 function setColor(e) {
     let target = e.target;
@@ -31,7 +31,7 @@ function setColor(e) {
 
 function teamSelect(team) {
     let teamElement = document.getElementById("team-" + team);
-    console.log(team);
+    teamElement.style.backgroundColor = colors[team - 1];
 }
 
 function updateBox(box, value, color) {
@@ -43,7 +43,7 @@ function updateBox(box, value, color) {
     }
 }
 
-function initUpdate() {
+window.onload = function () {
     const board = document.getElementsByClassName("board")[0];
     let content = loadContent()
 
@@ -61,10 +61,10 @@ function initUpdate() {
         } catch (error) { }
         box.dataset.count = 0;
     }
-}
 
-window.onload = function () {
-    initUpdate();
+    for (team of ["1", "2", "3", "4"]) {
+        teamSelect(team);
+    }
 };
 
 document.addEventListener('keydown', (event) => {
