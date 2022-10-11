@@ -35,7 +35,7 @@ function initUpdate() {
         // Dispaly box content and default colors
         try {
             let value = content[box.id].value;
-            updateBox(box, value, '#457B9D');
+            updateBox(box, value, colors[colors.length - 1]);
 
             if (box.id == '40') {
                 updateBox(box, null, 'gold');

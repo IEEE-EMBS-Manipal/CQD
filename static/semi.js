@@ -1,28 +1,19 @@
+let colors = ['salmon', '#F6BD60', '#292F36', '#457B9D'];
+
 function setColor(e) {
     let target = e.target;
     let count = +target.dataset.count;
 
-    switch (count) {
-        case 0:
-            color = 'salmon';
-            break;
-
-        case 1:
-            color = '#F6BD60';
-            break;
-
-        case 2:
-            color = '#292F36';
-            break;
-
-        default:
-            color = '#457B9D';
-            count = -1;
-            break;
+    if (count == null || count == undefined) {
+        count = 0
     }
+    let color = colors[count];
 
     target.style.backgroundColor = color;
     target.dataset.count = ++count;
+    if (count == colors.length) {
+        target.dataset.count = 0;
+    }
 }
 
 function updateBox(box, value, color) {
@@ -44,7 +35,7 @@ function initUpdate() {
         // Dispaly box content and default colors
         try {
             let value = content[box.id].value;
-            updateBox(box, value, '#457B9D');
+            updateBox(box, value, colors[colors.length - 1]);
         } catch (error) { }
         box.dataset.count = 0;
     }
