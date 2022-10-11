@@ -1,35 +1,19 @@
+let colors = ['#292F36', '#70e000', '#B2BECC', '#F08080', '#F6BD60', '#457B9D'];
+
 function setColor(e) {
     let target = e.target;
     let count = +target.dataset.count;
 
-    switch (count) {
-        case 0:
-            color = '#292F36';
-            break;
-
-        case 1:
-            color = '#70e000';
-            break;
-
-        case 2:
-            color = '#B2BECC';
-            break;
-
-        case 3:
-            color = '#F08080';
-            break;
-        case 4:
-             color = '#F6BD60';
-             break;
-        
-        default:
-            color = '#457B9D';
-            count = -1;
-            break;
+    if (count == null || count == undefined) {
+        count = 0
     }
+    let color = colors[count];
 
     target.style.backgroundColor = color;
     target.dataset.count = ++count;
+    if (count == colors.length) {
+        target.dataset.count = 0;
+    }
 }
 
 function updateBox(box, value, color) {
