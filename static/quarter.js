@@ -21,7 +21,7 @@ function setColor(e) {
     console.log(points);
 
     if (count < 5) {
-        let scoreElement = document.getElementById("team-"+(count));
+        let scoreElement = document.getElementById("team-score-"+(count));
         score = Number(scoreElement.innerText);
         console.log(score);
         score = score + points;
