@@ -49,31 +49,31 @@ function loadContent() {
     // This is in zero-indexing format
     var content = {
         "0": {
-            "value": "A.25"
+            "value": ""
         },
         "1": {
-            "value": "A.25"
+            "value": ""
         },
         "2": {
-            "value": "A.25"
+            "value": ""
         },
         "3": {
-            "value": "A.25"
+            "value": ""
         },
         "4": {
-            "value": "A.25"
+            "value": ""
         },
         "5": {
-            "value": "A.25"
+            "value": ""
         },
         "6": {
-            "value": "A.25"
+            "value": ""
         },
         "7": {
-            "value": "A.25"
+            "value": ""
         },
         "8": {
-            "value": "A.25"
+            "value": ""
         },
     }
     return content;
