@@ -1,4 +1,5 @@
 let colors = ["red", "blue", "green", "orange", "skyblue"];
+let scoreElement
 
 function setColor(e) {
     let target = e.target;
@@ -18,12 +19,10 @@ function setColor(e) {
     // Update scores
     content = target.innerText;
     points = Number(content.split(".")[1]);
-    console.log(points);
 
     if (count < 5) {
-        let scoreElement = document.getElementById("team-score-" + (count));
+        scoreElement = document.getElementById("team-score-" + (count));
         score = Number(scoreElement.innerText);
-        console.log(score);
         score = score + points;
         scoreElement.innerText = score;
     }
@@ -32,6 +31,13 @@ function setColor(e) {
 function teamSelect(team) {
     let teamElement = document.getElementById("team-" + team);
     teamElement.style.backgroundColor = colors[team - 1];
+
+    if (teamElement.dataset.init === true) {
+        teamElement.style.opacity = 1;
+    } else {
+        teamElement.style.opacity = 0.8;
+        teamElement.dataset.init = true;
+    }
 }
 
 function updateBox(box, value, color) {
