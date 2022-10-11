@@ -21,12 +21,17 @@ function setColor(e) {
     console.log(points);
 
     if (count < 5) {
-        let scoreElement = document.getElementById("team-score-"+(count));
+        let scoreElement = document.getElementById("team-score-" + (count));
         score = Number(scoreElement.innerText);
         console.log(score);
         score = score + points;
         scoreElement.innerText = score;
     }
+}
+
+function teamSelect(team) {
+    let teamElement = document.getElementById("team-" + team);
+    console.log(team);
 }
 
 function updateBox(box, value, color) {
@@ -61,6 +66,13 @@ function initUpdate() {
 window.onload = function () {
     initUpdate();
 };
+
+document.addEventListener('keydown', (event) => {
+    let key = event.key;
+    if (["1", "2", "3", "4"].includes(key)) {
+        teamSelect(key);
+    }
+}, false);
 
 function loadContent() {
     // This is in zero-indexing format
