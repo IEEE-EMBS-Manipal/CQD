@@ -45,10 +45,6 @@ function initUpdate() {
         try {
             let value = content[box.id].value;
             updateBox(box, value, '#457B9D');
-
-            if (box.id == '40') {
-                updateBox(box, null, 'gold');
-            }
         } catch (error) { }
         box.dataset.count = 0;
     }
