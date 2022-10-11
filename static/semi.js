@@ -15,8 +15,6 @@ function setColor(e) {
             color = '#292F36';
             break;
 
-   
-        
         default:
             color = '#457B9D';
             count = -1;
@@ -90,6 +88,6 @@ function loadContent() {
         "8": {
             "value": "A.25"
         },
-      }
+    }
     return content;
 }
