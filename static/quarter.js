@@ -1,4 +1,5 @@
 let colors = ['#292F36', '#70e000', '#B2BECC', '#F08080', '#F6BD60', '#457B9D'];
+let scoresLocation = ["score-top-left", "score-bottom-left", "score-top-right", "score-bottom-right"];
 
 function setColor(e) {
     let target = e.target;
@@ -13,6 +14,18 @@ function setColor(e) {
     target.dataset.count = ++count;
     if (count == colors.length) {
         target.dataset.count = 0;
+    }
+
+    // Update scores
+    content = target.innerText;
+    points = Number(content.split(".")[1]);
+    console.log(points);
+
+    if (count < 4) {
+        let score = document.getElementById(scoresLocation[count - 1]);
+        score = Number(score.innerText);
+        console.log(score);
+        score = score + points;
     }
 }
 
