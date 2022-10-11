@@ -2,7 +2,7 @@ body {
   font: 1.2em 'Press Start 2P', cursive !important;
 }
 
-h4 h5 {
+h1, h2, h3, h4, h5 , h6 {
   font-family: 'Press Start 2P', cursive !important;
 }
 
@@ -10,7 +10,7 @@ h4 h5 {
   width: 558px;
   margin-top: 0px;
   margin-right: auto;
-  /* margin-left: 5%; */
+  margin-left: 5%;
 }
 
 .tile {
