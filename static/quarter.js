@@ -32,11 +32,14 @@ function teamSelect(team) {
     let teamElement = document.getElementById("team-" + team);
     teamElement.style.backgroundColor = colors[team - 1];
 
-    if (teamElement.dataset.init === true) {
+    if (teamElement.dataset.init !== "0") {
         teamElement.style.opacity = 1;
+        teamElement.style.border = "5px solid gold";
+        teamElement.dataset.init = "0";
     } else {
-        teamElement.style.opacity = 0.8;
-        teamElement.dataset.init = true;
+        teamElement.style.opacity = 0.9;
+        teamElement.style.border = "";
+        teamElement.dataset.init = "1";
     }
 }
 
