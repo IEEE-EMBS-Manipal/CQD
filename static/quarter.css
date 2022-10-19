@@ -40,3 +40,21 @@ h6 {
   border: 2.5px solid gray;
   border-radius: 5px;
 }
+
+.scoreContainer {
+  display: grid;
+  grid-template: repeat(2, 1fr);
+  height: 88vh;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.score {
+  margin: auto;
+  width: 100%;
+  /* height: 50%; */
+  text-align: center;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+}
