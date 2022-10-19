@@ -12,22 +12,29 @@ h6 {
 }
 
 .board {
-  width: 558px;
-  max-height: 100vh;
+  width: 88vh;
+  height: 88vh;
   margin: auto;
+  background-color: #34495e;
+  color: #fff;
+  border: 5px solid #2c3e50;
+  border-radius: 10px;
+
+  display: grid;
+  grid-template: repeat(9, 1fr) / repeat(9, 1fr);
 }
 
 .tile {
-  float: left;
-  padding: 2px;
-}
+  margin: auto;
+  border: 2px solid #2c3e50;
+  border-radius: 2px;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 2em;
 
-.tile-button {
-  width: 58px;
-  height: 58px;
-  padding: 0;
-  cursor: pointer;
-  vertical-align: middle;
-  border: 0.6px solid gray;
-  border-radius: 5px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
 }
