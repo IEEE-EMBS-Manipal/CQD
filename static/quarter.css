@@ -13,9 +13,8 @@ h6 {
 
 .board {
   width: 558px;
-  margin-top: 0px;
-  margin-right: auto;
-  margin-left: 5%;
+  max-height: 100vh;
+  margin: auto;
 }
 
 .tile {
