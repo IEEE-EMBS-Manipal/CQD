@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}CQD{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="container">
+
+    <br><br><br>
+
+    <h1>
+        CQD
+        <br>
+        <small class="text-muted">COVID QUIZ-INTINE & DEBATE</small>
+    </h1>
+
+    <ul>
+        <li>
+            <a href="{{ url_for('pages', page='quarter') }}">
+                <h3>Quarter-final round</h3>
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ url_for('pages', page='semi') }}">
+                <h3>Semi-final round</h3>
+            </a>
+        </li>
+    </ul>
+
+</div>
+{% endblock %}
