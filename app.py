@@ -11,7 +11,7 @@ from flask_frozen import Freezer
 
 app = Flask(__name__)
 # Enter your GitHub Pages URL here instead of frozen-flask-gh-pages
-app.config['FREEZER_BASE_URL'] = 'https://docs/'
+app.config['FREEZER_BASE_URL'] = 'https://docs/CQD/'
 
 # As configured in GitHub Pages Settings
 app.config['FREEZER_DESTINATION'] = 'docs'
