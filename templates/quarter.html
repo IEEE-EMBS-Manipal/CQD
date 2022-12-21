@@ -2,6 +2,14 @@
 
 {% block title %}CQD | Quarter final round{% endblock %}
 
+{% macro renderScoreCard(id) %}
+<div id="team-{{id}}" class="row score" data-init="0">
+    <h5>Team {{id}}</h5>
+    <h6>Score</h6>
+    <p id="team-score-{{id}}">0</p>
+</div>
+{% endmacro %}
+
 {% block content %}
 
 <link rel="stylesheet" href="{{ url_for('static', filename='quarter.css') }}">
@@ -10,19 +18,8 @@
 <div class="container">
 
     <div class="col-md-2 scoreContainer">
-
-        <div id="team-1" class="row score" data-init="0">
-            <h5>Team 1</h5>
-            <h6>Score</h6>
-            <p id="team-score-1">0</p>
-        </div>
-
-        <div id="team-3" class="row score" data-init="0">
-            <h5>Team 3</h5>
-            <h6>Score</h6>
-            <p id="team-score-3">0</p>
-        </div>
-
+        {{ renderScoreCard(1) }}
+        {{ renderScoreCard(2) }}
     </div>
 
     <div class="col-md-8">
@@ -37,19 +34,8 @@
     </div>
 
     <div class="col-md-2 scoreContainer">
-
-        <div id="team-2" class="row score" data-init="0">
-            <h5>Team 2</h5>
-            <h6>Score</h6>
-            <p id="team-score-2">0</p>
-        </div>
-
-        <div id="team-4" class="row score" data-init="0">
-            <h5>Team 4</h5>
-            <h6>Score</h6>
-            <p id="team-score-4">0</p>
-        </div>
-
+        {{ renderScoreCard(3) }}
+        {{ renderScoreCard(4) }}
     </div>
 
 </div>
