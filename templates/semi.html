@@ -8,39 +8,22 @@
 
 <!-- Board -->
 <div class="container">
+
   <div class="row align-items-start">
     <div class="col">
+
       <div class="board">
+        {% for id in range(9) %}
         <div class="tile">
-          <button id="0" type="button" class="btn btn-primary tile-button" onclick="setColor(event)"></button>
+          <button id="{{id}}" type="button" class="btn btn-primary tile-button" onclick="setColor(event)">
+          </button>
         </div>
-        <div class="tile">
-          <button id="1" type="button" class="btn btn-primary tile-button" onclick="setColor(event)"></button>
-        </div>
-        <div class="tile">
-          <button id="2" type="button" class="btn btn-primary tile-button" onclick="setColor(event)"></button>
-        </div>
-        <div class="tile">
-          <button id="3" type="button" class="btn btn-primary tile-button" onclick="setColor(event)"></button>
-        </div>
-        <div class="tile">
-          <button id="4" type="button" class="btn btn-primary tile-button" onclick="setColor(event)"></button>
-        </div>
-        <div class="tile">
-          <button id="5" type="button" class="btn btn-primary tile-button" onclick="setColor(event)"></button>
-        </div>
-        <div class="tile">
-          <button id="6" type="button" class="btn btn-primary tile-button" onclick="setColor(event)"></button>
-        </div>
-        <div class="tile">
-          <button id="7" type="button" class="btn btn-primary tile-button" onclick="setColor(event)"></button>
-        </div>
-        <div class="tile">
-          <button id="8" type="button" class="btn btn-primary tile-button" onclick="setColor(event)"></button>
-        </div>
+        {% endfor %}
       </div>
+
     </div>
   </div>
+
 </div>
 
 <!-- Load content and colors -->
@@ -50,7 +33,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script src="../static/semi.js">
+<script src="{{ url_for('static', filename='semi.js') }}">
   initUpdate();
 </script>
 
