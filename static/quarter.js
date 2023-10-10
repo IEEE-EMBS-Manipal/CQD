@@ -1,3 +1,8 @@
+const button = document.querySelector('.btn btn-primary tile-button')
+const canvas = document.querySelector('.container')
+const jsConfetti = new JSConfetti();
+
+
 let colors = ["red", "blue", "green", "orange", "skyblue", "black"];
 let colorsX = ["red", "blue", "green", "orange"];
 let X = 0;
@@ -65,6 +70,15 @@ function setColor(e) {
         score = Number(scoreElement.innerText);
         score = score + points;
         scoreElement.innerText = score;
+    }
+
+    for(let i = 1; i <= 4; i++) {
+        scoreElement = document.getElementById("team-score-" + (i));
+        score = Number(scoreElement.innerText);
+        if(score >= 750) {
+            jsConfetti.addConfetti()
+            break;
+        }
     }
 }
 
