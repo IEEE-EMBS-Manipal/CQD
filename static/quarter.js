@@ -1,5 +1,6 @@
 let colors = ["red", "blue", "green", "orange", "skyblue", "black"];
 let colorsX = ["red", "blue", "green", "orange"];
+let X = 0;
 let scoreElement
 let newKey = 0;
 let check=false;
