@@ -1,32 +1,72 @@
-let colors = ["red", "blue", "green", "orange", "skyblue"];
+let colors = ["red", "blue", "green", "orange", "skyblue", "black"];
+let colorsX = ["red", "blue", "green", "orange"];
 let scoreElement
+let newKey = 0;
+let check=false;
+let blackout=false;
+
+//Undo functions
+
+function undo(team) {
+    let teamElement = document.getElementById("team-" + team);
+    scoreElement = document.getElementById("team-score-" + team);
+    score = Number(scoreElement.innerText);
+    score = score - 2*points;
+    scoreElement.innerText = score;
+    check=true;
+}
+
+function undoColor(target) {
+    target.style.backgroundColor=colors[4];
+    return 0;
+}
+
+//Blackout functions
+
+function black(team){
+    let teamElement = document.getElementById("team-" + team);
+    scoreElement = document.getElementById("team-score-" + team);
+    score = Number(scoreElement.innerText);
+    score = score - points;
+    scoreElement.innerText = score;
+    blackout=true;
+}
+
+function blackColor(target) {
+    target.style.backgroundColor=colors[5];
+    return 0;
+}
 
 function setColor(e) {
     let target = e.target;
     let count = +target.dataset.count;
-
     if (count == null || count == undefined) {
         count = 0
     }
-    let color = colors[count];
+    target.style.backgroundColor=colorsX[newKey - 1];
 
-    target.style.backgroundColor = color;
-    target.dataset.count = ++count;
-    if (count == colors.length) {
-        target.dataset.count = 0;
+    if(check) {
+        
+        undoColor(target);
+        check=false;
+    }
+    if(blackout) {
+        blackColor(target);
+        blackout=false;
     }
 
     // Update scores
     content = target.innerText;
     points = Number(content.split(".")[1]);
 
-    if (count < 5) {
-        scoreElement = document.getElementById("team-score-" + (count));
+    if (X < 5) {
+        scoreElement = document.getElementById("team-score-" + (newKey));
         score = Number(scoreElement.innerText);
         score = score + points;
         scoreElement.innerText = score;
     }
 }
+
 
 function teamSelect(team) {
     let teamElement = document.getElementById("team-" + team);
@@ -62,7 +102,7 @@ window.onload = function () {
         // Dispaly box content and default colors
         try {
             let value = content[box.id].value;
-            updateBox(box, value, colors[colors.length - 1]);
+            updateBox(box, value, colors[colors.length - 2]);
 
             if (box.id == '40') {
                 updateBox(box, null, 'gold');
@@ -92,6 +132,15 @@ document.addEventListener('keydown', (event) => {
     let key = event.key;
     if (["1", "2", "3", "4"].includes(key)) {
         teamSelect(key);
+        newKey = key;
+    }
+    if(["z"].includes(key)) {
+        undo(newKey);
+        // check=undoColor();
+    }
+    if(["b"].includes(key)) {
+        black(newKey);
+        // check=undoColor();
     }
 }, false);
 
